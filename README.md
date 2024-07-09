@@ -78,3 +78,27 @@ WITH review_nulls AS(
 -- visualizando tabela de contagem de nulos
 SELECT * FROM review_nulls;
 ````
+
+| product_nulls |  |  |
+| --- | --- | --- |
+|  | product_id_nulls | 0 |
+|  | product_name_nulls | 0 |
+|  | category_nulls | 0 |
+|  | discounted_price_nulls | 0 |
+|  | actual_price_nulls | 0 |
+|  | discount_percentage_nulls | 0 |
+|  | about_product_nulls | 4 |
+
+| review_nulls |  |  |
+| --- | --- | --- |
+|  | user_id_nulls | 0 |
+|  | user_name_nulls | 0 |
+|  | review_id_nulls | 0 |
+|  | review_title_nulls | 0 |
+|  | review_content_nulls | 0 |
+|  | img_link_nulls | 466 |
+|  | product_link_nulls | 466 |
+|  | product_id_nulls | 0 |
+|  | rating_nulls | 0 |
+|  | rating_count_nulls | 2 |
+

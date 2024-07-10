@@ -101,4 +101,3 @@ SELECT * FROM review_nulls;
 |  | product_id_nulls | 0 |
 |  | rating_nulls | 0 |
 |  | rating_count_nulls | 2 |
-

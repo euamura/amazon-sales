@@ -232,3 +232,5 @@ CREATE OR REPLACE TABLE `amazon_sales.amazon_review_clean` AS
 
 ### 1.6. Identificar e tratar dados discrepantes em variáveis numéricas
 
+1.6.1- Não há identificação de dados discrepantes em variáveis numéricas. Ao considerar que se trata de inúmeros varejos, a análise respeita a forma autônoma como cada varejista atribui o preço do seu produto bem como os descontos.
+

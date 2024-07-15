@@ -103,3 +103,132 @@ SELECT * FROM review_nulls;
 |  | product_id_nulls | 0 |
 |  | rating_nulls | 0 |
 |  | rating_count_nulls | 2 |
+
+1.2.2-  A variável rating_count é usada como ponto importante da análise, portanto não é possível manter suas linhas nulas.
+
+<details>
+  <summary>Tratar e atualizar tabela sem as linhas nulas usando SQL</summary>
+
+  ```sql
+  --atualizar nulos
+SELECT
+  *
+FROM `amazon_sales.amazon_review_clean`
+WHERE rating_count IS NULL;
+
+
+--tabela teste de atualização de nulo
+WITH rating_nulls AS(
+  SELECT
+    *
+  FROM `amazon_sales.amazon_review_clean`
+  WHERE rating_count IS NOT NULL
+)
+SELECT * FROM rating_nulls
+
+--atualizando tabela
+CREATE OR REPLACE TABLE `amazon_sales.amazon_review_clean` AS(
+    SELECT
+    *
+  FROM `amazon_sales.amazon_review_clean`
+  WHERE rating_count IS NOT NULL
+);
+  ```
+</details>
+
+### 1.3. Identificar e tratar valores duplicados
+
+<details>
+  <summary>1.3.1- Identificar e tratar dados duplicados usando comandos SQL:</summary>
+
+  ```sql
+  ---- Identificar duplicados
+
+---amazon_review
+--visualizar tabela
+SELECT * FROM `amazon_sales.amazon_review`
+----criar tabela temporaria com contagem para identificar duplicados
+WITH review_duplicates AS(
+  SELECT
+    r.*,
+    ROW_NUMBER() OVER (PARTITION BY review_id ORDER BY review_id) AS row_num
+  FROM `amazon_sales.amazon_review` AS r
+)
+SELECT
+  *
+FROM
+  review_duplicates
+WHERE
+  row_num = 1;
+
+
+---amazon_product
+--visualizar tabela
+SELECT * FROM `amazon_sales.amazon_product`
+----criar tabela temporaria com contagem para identificar duplicados
+WITH product_duplicates AS(
+  SELECT
+    r.*,
+    ROW_NUMBER() OVER (PARTITION BY product_id ORDER BY product_id) AS row_num
+  FROM `amazon_sales.amazon_product` AS r
+)
+SELECT
+  *
+FROM
+  product_duplicates
+WHERE
+  row_num = 1;
+  ```
+</details>
+
+### 1.4. Identificar e gerenciar dados fora do escopo de análise
+
+1.4.1- A análise é focada na categoria do produto e suas classificações, então ao selecionar os dados o foco está nas que podemos trazer segmentação de produtos. As colunas em verde foram as selecionadas como importantes pra análise, as amarelas, são colocadas como possíveis extras para complementação da análise, e, as vermelhas, são as que não trazem objetivos claros para o escopo desta análise específica:
+
+![tabela-1](https://github.com/user-attachments/assets/8b17b9bd-7cfe-4176-988c-c8f5235da231)
+
+![tabela-2](https://github.com/user-attachments/assets/ac30a25f-4725-4a4d-93a3-3e92d4f8c31a)
+
+### 1.5. Identificar e tratar dados discrepantes em variáveis categóricas
+
+1.5.1- Na coluna rating há um valor discrepante, onde se espera um número há um caractere “|”, o dado foi retirado da análise como uma exceção, mas é um alerta pois o rating_count dessa linha tem um valor considerável de 992.
+
+<details>
+  <summary>Identificar e tratar usando SQL:</summary>
+
+  ```sql
+  ---identificando dados discrepantes em rating
+SELECT   
+  MIN(rating) AS min_rating,
+  MAX(rating) AS max_rating
+FROM `amazon_sales.amazon_review_clean`
+
+---selecionando linha com dado discrepante
+SELECT
+  *
+FROM `amazon_sales.amazon_review`
+WHERE rating = '|'
+
+---consultando tabela retirando a linha com dado discrepante
+SELECT
+    *
+FROM `amazon_sales.amazon_review_clean`
+WHERE rating != '|'
+
+---substituir tabela sem a linha do dado discrepante
+CREATE OR REPLACE TABLE `amazon_sales.amazon_review_clean` AS
+ SELECT
+    *
+  FROM `amazon_sales.amazon_review_clean`
+  WHERE rating != '|'
+  ```
+</details>
+
+![tabela-3](https://github.com/user-attachments/assets/346a84b8-362a-42a7-9776-cda48be93345)
+
+1.5.2- São encontradas nas colunas review_title e review_content, emojis e vários formatos de frase. Para tratá-los, todos devem ser transformados em letras minúsculas, sem os emojis e com espaços após as pontuações.
+
+![tabela-4](https://github.com/user-attachments/assets/a5cbc818-00c6-48ab-a345-31b01779a475)
+
+### 1.6. Identificar e tratar dados discrepantes em variáveis numéricas
+

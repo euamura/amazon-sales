@@ -234,3 +234,45 @@ CREATE OR REPLACE TABLE `amazon_sales.amazon_review_clean` AS
 
 1.6.1- Não há identificação de dados discrepantes em variáveis numéricas. Ao considerar que se trata de inúmeros varejos, a análise respeita a forma autônoma como cada varejista atribui o preço do seu produto bem como os descontos.
 
+<details>
+  <summary>Identificar dados usando SQL</summary>
+
+  ```sql
+  -Verificar valores discrepantes--
+SELECT
+MAX (discounted_price),
+MIN (discounted_price),
+AVG (discounted_price),
+FROM
+projeto-4-caso-consultoria.Amazon.amazon - amazon_product;
+
+SELECT
+MAX (actual_price),
+MIN (actual_price),
+AVG (actual_price),
+FROM
+projeto-4-caso-consultoria.Amazon.amazon - amazon_product;
+
+SELECT
+MAX (discount_percentage),
+MIN (discount_percentage),
+AVG (discount_percentage),
+FROM
+projeto-4-caso-consultoria.Amazon.amazon - amazon_product;
+
+SELECT
+MAX (rating_count),
+MIN (rating_count),
+AVG (rating_count),
+FROM
+projeto-4-caso-consultoria.Amazon.amazon - amazon_review;
+
+SELECT
+MAX (rating),
+MIN (rating),
+AVG (rating),
+FROM
+projeto-4-caso-consultoria.Amazon.amazon - amazon_review
+  ```
+</details>
+

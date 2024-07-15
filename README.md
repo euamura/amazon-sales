@@ -34,9 +34,10 @@
 
 ### **1.2. Identificar e tratar valores nulos**
 
-1.2.1- Identificar e tratar valores nulos usando SQL:
+<details>
+  <summary>1.2.1- Identificar e tratar valores nulos usando SQL:</summary>
 
-```sql
+  ```sql
 --- tabela: amazon_product
 -- visualizando tabela
 SELECT *
@@ -77,7 +78,8 @@ WITH review_nulls AS(
 )
 -- visualizando tabela de contagem de nulos
 SELECT * FROM review_nulls;
-````
+  ```
+</details>
 
 | product_nulls |  |  |
 | --- | --- | --- |

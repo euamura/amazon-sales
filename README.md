@@ -495,4 +495,25 @@ SELECT * FROM quintis
   ```
 </details>
 
+![Quintil_rating](https://github.com/user-attachments/assets/84a4b270-1f3a-45a3-8258-18d1e294df20)
 
+
+![Quintil_rating_count](https://github.com/user-attachments/assets/4f1d3491-7db3-4f14-a4a2-c6588a972366)
+
+
+![Quintil_actual_price](https://github.com/user-attachments/assets/53269ae9-f95c-4adf-830a-36ab27ab25f2)
+
+
+![Quintil_discount_percentage](https://github.com/user-attachments/assets/9094f435-dff5-41b9-a7aa-27b123ad9e7f)
+
+
+### 2.3. Agrupar e visualizar dados de acordo com variáveis categóricas
+
+
+![rating e rating_count categoria](https://github.com/user-attachments/assets/c1ec6c28-d3fc-4a88-8fb1-4c13df960a3c)
+
+
+![rating e rating_count subcategoria](https://github.com/user-attachments/assets/4464e280-bed7-4732-bc9f-950f44928ef1)
+
+
+![rating e rating_count categoria_produto](https://github.com/user-attachments/assets/71abd93d-68ec-4c08-856e-c8ac54c0f121)

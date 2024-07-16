@@ -31,6 +31,7 @@
     - 2.3.  Agrupar e visualizar dados de acordo com variáveis categóricas
     - 2.4. Aplicar medidas de tendência central
     - 2.5. Aplicar medidas de dispersão
+    - 2.6. Ver distribuição
    
 - **3. Aplicar técnica de análise**
     - Validar hipótese

@@ -24,8 +24,21 @@
     - 1.7. Verificar e alterar o tipo de dados
     - 1.8. Criar novas variáveis
     - 1.9. Unir tabelas
-    - 1.10. Construir tabelas auxiliares
+ 
+- **2. Fazer uma análise exploratória**
+    - 2.1. Calcular correlação entre variáveis
+    - 2.2. Calcular quartis, decis ou percentis
+    - 2.3.  Agrupar e visualizar dados de acordo com variáveis categóricas
+    - 2.4. Aplicar medidas de tendência central
+    - 2.5. Aplicar medidas de dispersão
+   
+- **3. Aplicar técnica de análise**
+    - Validar hipótese
+    - Aplicar segmentação
 
+- **4. Resumir informações e apresentar resultados em um dashboard**
+    - 4.1. Dashboard
+    
 ## **1. Processar e preparar a base de dados**
 
 ### 1.1. Conectar/importar dados para ferramentas
@@ -275,4 +288,210 @@ FROM
 projeto-4-caso-consultoria.Amazon.amazon - amazon_review
   ```
 </details>
+
+## 1.7. Verificar e alterar o tipo de dados
+
+<details>
+  <summary>1.7.1- A coluna rating está em string, e é preciso alterar para tipo de número, usando SQL:</summary>
+
+  ```sql
+ --teste de mudança de tipo de variavel
+WITH test AS(
+  SELECT 
+    * EXCEPT(rating,row_num),
+      CAST(rating AS FLOAT64) AS rating
+  FROM 
+    `amazon_sales.amazon_review_clean`
+)
+
+SELECT * FROM test
+
+--atualizando tabela
+CREATE OR REPLACE TABLE `amazon_sales.amazon_review_clean` AS(
+    SELECT 
+    * EXCEPT(rating,row_num),
+      CAST(rating AS FLOAT64) AS rating
+  FROM 
+    `amazon_sales.amazon_review_clean`
+);
+  ```
+</details>
+
+## 1.8. Criar novas variáveis
+
+<details>
+  <summary>1.8.1- Criação de 2 novas variáveis a partir das variáveis da coluna category usando SQL:</summary>
+
+  ```sql
+  --tabela teste de novas variaveis
+WITH category_array AS(
+  SELECT
+    * EXCEPT(row_num),
+    SPLIT(category, '|')[OFFSET(0)] AS main_category,
+    SPLIT(category, '|')[OFFSET(1)] AS sub_category
+  FROM `amazon_sales.amazon_product_clean`
+)
+SELECT * FROM category_array
+
+--atualizar tabela
+CREATE OR REPLACE TABLE `amazon_sales.amazon_product_clean` AS(
+    SELECT
+    * EXCEPT(row_num),
+    SPLIT(category, '|')[OFFSET(0)] AS main_category,
+    SPLIT(category, '|')[OFFSET(1)] AS sub_category
+  FROM `amazon_sales.amazon_product_clean`
+);
+  ```
+</details>
+
+<details>
+  <summary>1.8.2- Limpeza de texto das novas colunas</summary>
+
+  ```sql
+
+-- limpeza de textos
+WITH limpeza_textos AS (
+  SELECT
+    * EXCEPT(sub_category, main_category),
+    REGEXP_REPLACE(
+      REGEXP_REPLACE(
+        REGEXP_REPLACE(sub_category, r'([a-z])([A-Z])', r'\1 \2'),  -- Espaço antes de letras maiúsculas
+        r'\s*&\s*', r' & '  -- Espaço antes e depois de &
+      ),
+      r',', r', '  -- Espaço após a vírgula
+    ) AS sub_category,
+    REGEXP_REPLACE(
+      REGEXP_REPLACE(
+        REGEXP_REPLACE(main_category, r'([a-z])([A-Z])', r'\1 \2'),  -- Espaço antes de letras maiúsculas
+        r'\s*&\s*', r' & '  -- Espaço antes e depois de &
+      ),
+      r',', r', '  -- Espaço após a vírgula
+    ) AS main_category
+  FROM 
+    `amazon_sales.amazon_product_clean`
+)
+
+SELECT * 
+FROM limpeza_textos;
+
+---atualização de tabela
+CREATE OR REPLACE TABLE `amazon_sales.amazon_product_clean` AS(
+   SELECT
+    * EXCEPT(sub_category, main_category),
+    REGEXP_REPLACE(
+      REGEXP_REPLACE(
+        REGEXP_REPLACE(sub_category, r'([a-z])([A-Z])', r'\1 \2'),  -- Espaço antes de letras maiúsculas
+        r'\s*&\s*', r' & '  -- Espaço antes e depois de &
+      ),
+      r',', r', '  -- Espaço após a vírgula
+    ) AS sub_category,
+    REGEXP_REPLACE(
+      REGEXP_REPLACE(
+        REGEXP_REPLACE(main_category, r'([a-z])([A-Z])', r'\1 \2'),  -- Espaço antes de letras maiúsculas
+        r'\s*&\s*', r' & '  -- Espaço antes e depois de &
+      ),
+      r',', r', '  -- Espaço após a vírgula
+    ) AS main_category
+  FROM 
+    `amazon_sales.amazon_product_clean`
+);
+  ```
+</details>
+
+## 1.9. Unir tabelas
+
+<details>
+  <summary>Unir tabelas com SQL:</summary>
+
+  ```sql
+ -- visualizar tabela review
+SELECT *
+FROM `amazon_sales.amazon_review_clean`;
+
+-- visualizar tabela product
+SELECT *
+FROM `amazon_sales.amazon_product_clean`;
+
+--- CRIAR NOVA TABELA
+--CTE
+WITH unida AS(
+  SELECT
+    p.product_id,
+    p.main_category,
+    p.sub_category,
+    p.actual_price,
+    p.discount_percentage,
+    r.user_id,
+    r.review_id,
+    r.rating,
+    r.rating_count
+FROM `amazon_sales.amazon_product_clean` AS p
+LEFT JOIN `amazon_sales.amazon_review_clean` AS r ON p.product_id = r.product_id
+), 
+
+--retirando duplicados da CTE de união de tabelas
+tratados AS(
+  SELECT
+    * EXCEPT(rating,rating_count),
+    COALESCE(rating,0) AS rating,
+    COALESCE(rating_count,0) AS rating_count,
+    ROW_NUMBER() OVER(PARTITION BY product_id) AS rownum
+  FROM unida
+)
+
+SELECT * EXCEPT(rownum) FROM tratados
+WHERE rownum = 1;
+  ```
+</details>
+
+# 2. Fazer uma análise exploratória
+
+### 2.1. Calcular correlação entre variáveis
+
+<details>
+  <summary>2.1.1- Calcular correlação com SQL:</summary>
+
+  ```sql
+ 
+---visualizar tabela
+SELECT * FROM `amazon_sales.amazon_principal`;
+
+----calcular correlação
+SELECT
+  CORR(actual_price,rating) AS corr_price_rating,
+  CORR(actual_price,rating_count) AS corr_price_rating_count,
+  CORR(discount_percentage, rating) AS corr_per_discount_rating,
+  CORR(discount_percentage, rating_count) AS corr_per_discount_rating_count,
+  CORR(rating,rating_count) AS corr_rating_rating_count
+FROM `amazon_sales.amazon_principal`;
+
+  ```
+</details>
+
+2.1.2- Resultados:
+![tabela-5](https://github.com/user-attachments/assets/03ea0345-3734-4caf-a4d2-0de9882ddf77)
+
+### 2.2. Calcular percentis
+
+<details>
+  <summary>2.2.1- Dividir base de dados por quintil, com variáveis com SQL:</summary>
+
+  ```sql
+  ---dividir quintis
+CREATE OR REPLACE TABLE `amazon_sales.amazon_principal` AS(
+WITH quintis AS(
+SELECT
+  *,
+  NTILE(5) OVER(ORDER BY rating) AS rating_ntile,
+  NTILE(5) OVER(ORDER BY rating_count) AS rating_count_ntile,
+  NTILE(5) OVER(ORDER BY actual_price) AS actual_price_ntile,
+  NTILE(5) OVER(ORDER BY discount_percentage) AS discount_percentage_ntile
+FROM `amazon_sales.amazon_principal`
+)
+
+SELECT * FROM quintis
+);
+  ```
+</details>
+
 

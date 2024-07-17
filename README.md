@@ -4,7 +4,12 @@
 
 ## Case
 
+Num ambiente globalizado e altamente competitivo, cresce cada vez mais o número de vendas online, mas as empresas também vêm enfrentando uma quantidade maior de reclamações dos seus clientes, diante disso, os diretores de produto da Amazon estão em busca de novas estratégias comerciais para aumentar as vendas e melhorar a satisfação dos clientes. 
+
 ## Objetivos
+
+Elaborar uma análise abrangente que forneça insights valiosos para os diretores de produto, permitindo-lhes entender melhor o desempenho dos produtos e subcategorias, e auxiliar na formulação de estratégias comerciais mais eficazes.
+Hipóteses:
 
 ## Ferramentas
 

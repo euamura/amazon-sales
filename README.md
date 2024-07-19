@@ -1,5 +1,13 @@
 # Otimizando a Análise de Produtos para Estratégias de Dropshipping Eficazes na Amazon
 
+## Link de nteresse
+
+https://app.powerbi.com/view?r=eyJrIjoiNzUwYzgxNjktYzQ4Ni00ZDRlLTkwODctMDkyNjRhNzZkOTJkIiwidCI6IjRhNWRiNDI3LTllNTgtNDQ5MC04ZDY4LWYxOWJlYjRiNzlmMCJ9
+
+## Equipe
+- Amanda Mendonça
+- Keila Del Re
+
 ## Introdução
 
 Diante do crescimento exponencial e da alta demanda por comércio eletrônico, a Amazon, junto com seus fornecedores de dropshipping, enfrentam o desafio de aprimorar suas estratégias para maximizar o sucesso em um mercado cada vez mais competitivo. Para alcançar esse objetivo, o time de produto precisa da implementação de um modelo robusto de análise de produtos que otimize a tomada de decisões e impulsione a rentabilidade.

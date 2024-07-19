@@ -1,22 +1,48 @@
-# amazon-sales
+# Otimizando a Análise de Produtos para Estratégias de Dropshipping Eficazes na Amazon
 
 ## Introdução
 
+Diante do crescimento exponencial e da alta demanda por comércio eletrônico, a Amazon, junto com seus fornecedores de dropshipping, enfrentam o desafio de aprimorar suas estratégias para maximizar o sucesso em um mercado cada vez mais competitivo. Para alcançar esse objetivo, o time de produto precisa da implementação de um modelo robusto de análise de produtos que otimize a tomada de decisões e impulsione a rentabilidade.
+
+Para esta análise, pontua-se os pilares e dados importantes como:
+
+1. Rentabilidade do Produto: Avaliando o preço do produto e descontos disponíveis na plataforma.
+2. Popularidade do Produto: Medindo o interesse do público através do número de avaliações e classificação média.
+3. Satisfação do Cliente: Monitorando o nível de contentamento dos consumidores através da pontuação média das avaliações.
+
 ## Case
 
-Num ambiente globalizado e altamente competitivo, cresce cada vez mais o número de vendas online, mas as empresas também vêm enfrentando uma quantidade maior de reclamações dos seus clientes, diante disso, os diretores de produto da Amazon estão em busca de novas estratégias comerciais para aumentar as vendas e melhorar a satisfação dos clientes. 
+É indiscutível que a tomada de decisão informada é fundamental para o sucesso nos negócios. Entendendo essa necessidade nasceu a Datalab, uma empresa de consultoria inovadora especializada em análise de dados, fundada com a visão de fornecer soluções analíticas de ponta.
+
+A Datalab tornou-se uma parceira confiável para diversas empresas em diferentes setores e complexidade. Seu modelo de consultoria exclusiva permite que seus analistas de dados escolham projetos que estejam alinhados com seus interesses e conhecimentos, buscando maximizar a aplicação de suas habilidades técnicas para contextos que possam despertar seu maior potencial.
+
+A possibilidade de escolher os projetos e/ou clientes com quem deseja colaborar não apenas capacita os analistas de dados, mas também contribui para um ambiente de trabalho dinâmico e em constante evolução.
+
+A Datalab incentiva a criatividade e a inovação, fornecendo um espaço onde os profissionais podem explorar novas ideias e abordagens na análise de dados.
+
+Além disso, esta flexibilidade na escolha dos projetos permite desenvolver relacionamentos fortes com os clientes, graças ao fato de que os analistas entendem perfeitamente suas necessidades e desafios. Esta conexão mais próxima não só beneficia os clientes ao receber soluções mais personalizadas, mas também fornece aos analistas de dados uma experiência enriquecedora e gratificante.
+
+DATASET ESCOLHIDO: AMAZON-SALES
+
+Num ambiente globalizado e altamente competitivo, cresce cada vez mais o número de vendas online, mas as empresas também vêm enfrentando uma quantidade maior de reclamações dos seus clientes, diante disso, os diretores de produto da Amazon estão em busca de novas estratégias comerciais para aumentar as vendas e melhorar a satisfação dos clientes. Para alcançar esse objetivo, o time de produto precisa da implementação de um modelo robusto de análise de produtos que otimize a tomada de decisões e impulsione a rentabilidade.
 
 ## Objetivos
 
-Elaborar uma análise abrangente que forneça insights valiosos para os diretores de produto, permitindo-lhes entender melhor o desempenho dos produtos e subcategorias, e auxiliar na formulação de estratégias comerciais mais eficazes.
-Hipóteses:
+Elaborar uma análise abrangente que forneça insights valiosos para os diretores de produto, permitindo-lhes entender melhor o desempenho dos produtos e subcategorias, e auxiliar na formulação de estratégias comerciais mais eficazes. E implementar um modelo de análise de produtos robusto e estratégico para que a Amazon e seus fornecedores de dropshipping podem tomar decisões mais assertivas, otimizar seus investimentos. 
+
+Isso levantou algumas hipóteses sobre a base de produtos:
+- Hipótese 1:  Quanto maior o desconto, melhor será a pontuação.
+- Hipótese 2: Quanto maior o número de pessoas que avaliaram o produto, melhor será a classificação.
+- Hipótese 3: Categorias com produtos mais caros têm maiores pontuações.
+- Hipótese 4: Quanto maior o desconto, mais avaliações a categoria recebe.
 
 ## Ferramentas
-
+- Bigquery
+- Power BI
+  
 ## Linguagens
-
-## Insumos
-
+- SQL
+- 
 ## Escopo do projeto
 
 - **1. Processar e preparar a base de dados**
@@ -44,6 +70,8 @@ Hipóteses:
 
 - **4. Resumir informações e apresentar resultados em um dashboard**
     - 4.1. Dashboard
+      
+- **5. Conclusões e próximos passos**
     
 ## **1. Processar e preparar a base de dados**
 
@@ -522,3 +550,43 @@ SELECT * FROM quintis
 
 
 ![rating e rating_count categoria_produto](https://github.com/user-attachments/assets/71abd93d-68ec-4c08-856e-c8ac54c0f121)
+
+## 3. Aplicar técnica de análise
+
+## 4. Resumir informações e apresentar resultados em um dashboard
+
+## 5. Conclusões e próximos passos
+
+**Conclusão: Rumo ao Sucesso no Dropshipping**
+
+Ao implementar um modelo de análise de produtos robusto e estratégico, a Amazon e seus fornecedores de dropshipping podem tomar decisões mais assertivas, otimizar seus investimentos e alcançar um sucesso duradouro no mercado dinâmico do comércio eletrônico. A Matriz BCG, como ferramenta complementar, auxilia na identificação de oportunidades e tomada de decisões estratégicas para cada produto da carteira.
+
+**Eletrônicos em Foco**
+
+No contexto da Amazon, com foco na categoria de eletrônicos, a análise de produtos e a Matriz BCG podem ser utilizadas para:
+
+- Priorizar investimentos em produtos com alto potencial de crescimento (smartphones, notebooks, TVs).
+- Maximizar a lucratividade de produtos estáveis e populares (eletrodomésticos, tablets).
+- Identificar produtos com baixo desempenho que precisam ser otimizados ou descontinuados (acessórios obsoletos, periféricos de baixa qualidade).
+
+  **Próximos Passos:**
+
+Para construir um modelo de desempenho de produto eficaz, é essencial analisar as seguintes variáveis:
+
+- Porcentagem de Desconto e Preço: Indicadores da rentabilidade do produto e da competitividade no mercado.
+- Avaliações e Pontuação: Revelam a popularidade do produto e a percepção do cliente.
+
+E as seguintes, adicionais:
+
+- Data e Valor de Venda: Permitem identificar tendências de mercado e oportunidades de crescimento.
+- Investimento do Fornecedor: Essencial para calcular a margem de lucro real e negociar melhores preços.
+
+Com a completude das informações. A análise terá os pilares já citados, com bases mais elaboradas para resultados mais precisos:
+
+1. Rentabilidade do Produto: Avalia o potencial de lucro através do preço de venda e descontos disponíveis na plataforma *e margem de lucro.*
+2. Popularidade do Produto: Mede o interesse do público através do número de avaliações, classificação média *e tendências de pesquisa ao longo do tempo.*
+3. Satisfação do Cliente: Monitora o nível de contentamento dos consumidores através da pontuação média das avaliações *e de uma análise de sentimento a partir de PNL.*
+
+**Impulsionando o produto para o sucesso**
+
+Com a complementação dos dados também é possível desenvolver uma Matriz BCG automatizada para que os produtos sejam categorizados com praticidade e estratégias de mercado possam ser traçadas, analisando a participação de mercado e taxa de crescimento do produto.

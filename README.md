@@ -559,9 +559,23 @@ SELECT * FROM quintis
 
 ![rating e rating_count categoria_produto](https://github.com/user-attachments/assets/71abd93d-68ec-4c08-856e-c8ac54c0f121)
 
+
+
+### 2.4. Aplicar medidas de tendência central
+
+
+### 2.5. Aplicar medidas de dispersão
+
+
+### 2.6. Ver distribuição
+
+
+   
 ## 3. Aplicar técnica de análise
 
- - Validar hipótese
+
+### 3.1. Validar hipótese
+ 
  
 ![Hipótese 1](https://github.com/user-attachments/assets/14a1e7db-187d-4593-9ac1-f941efc564e1)
 
@@ -579,8 +593,8 @@ SELECT * FROM quintis
 
 
 
-    
- - Aplicar Segmentação
+### 3.2. Aplicar Segmentação 
+
 
 
   ```sql

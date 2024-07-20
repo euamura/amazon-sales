@@ -582,7 +582,7 @@ SELECT * FROM quintis
     
     - Aplicar segmentação
 
-    ```sql
+  ```sql
     --Criando uma coluna com segmentação das avaliações--
   WITH CategorizedRatings AS (
   SELECT
@@ -667,7 +667,7 @@ FROM
   CategorizedRatings
 ORDER BY
   main_category, rating_range;
-  ```
+```
 Após realizar a segmentação das avaliações para que fosse possível analisar a satisfação dos clientes de acordo com as categorias de produtos, realizamos uam nova classificação com o objetivo de verificar o desempenho de cada categoria, de acordo com as variáveis: rating, rating_count, actual_price e discount_percentage, para ter uma visão do desempenho do produto na visão da empresa.
 
 ´´´sql

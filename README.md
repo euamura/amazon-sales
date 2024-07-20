@@ -740,14 +740,12 @@ SELECT
   *
 FROM
   Quintile;
-  ´´´
-
+´´´
 
 
 ## 4. Resumir informações e apresentar resultados em um dashboard
 
-
-![image](https://github.com/user-attachments/assets/43d735f7-80b1-4c4b-85d5-51f0b7703107)
+![Dashboard](https://github.com/user-attachments/assets/6225d1c6-64d7-4d74-9bc0-8e96e0980757)
 
 
 ## 5. Conclusões e próximos passos

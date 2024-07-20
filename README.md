@@ -73,8 +73,8 @@ Isso levantou algumas hipóteses sobre a base de produtos:
     - 2.6. Ver distribuição
    
 - **3. Aplicar técnica de análise**
-    - Validar hipótese
-    - Aplicar segmentação
+    - 3.1. Validar hipótese
+    - 3.2. Aplicar segmentação
 
 - **4. Resumir informações e apresentar resultados em um dashboard**
     - 4.1. Dashboard

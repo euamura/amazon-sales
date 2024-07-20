@@ -676,7 +676,6 @@ Após realizar a segmentação das avaliações para que fosse possível analisa
 
   ```sql
     --coluna com a média da soma dos quintis das variáveis, rating, rating_count, actual_price e discount_percentage---
-  
 WITH Quintile AS (
   SELECT
   product_id,
@@ -742,6 +741,7 @@ SELECT
 FROM
   Quintile;
   ´´´
+
 
 
 ## 4. Resumir informações e apresentar resultados em um dashboard

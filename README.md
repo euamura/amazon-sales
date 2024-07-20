@@ -672,7 +672,6 @@ ORDER BY
 
 Após realizar a segmentação das avaliações para que fosse possível analisar a satisfação dos clientes de acordo com as categorias de produtos, realizamos uam nova classificação com o objetivo de verificar o desempenho de cada categoria, de acordo com as variáveis: rating, rating_count, actual_price e discount_percentage, para ter uma visão do desempenho do produto na visão da empresa.
 
-
 ´´´sql
 
 --Criando uma coluna com a média da soma dos quintis das variáveis, rating, rating_count, actual_price e discount_percentage---
@@ -741,7 +740,7 @@ SELECT
   *
 FROM
   Quintile;
-´´´
+  ´´´
 
 
 ## 4. Resumir informações e apresentar resultados em um dashboard

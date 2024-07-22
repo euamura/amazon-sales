@@ -66,12 +66,10 @@ Isso levantou algumas hipóteses sobre a base de produtos:
  
 - **2. Fazer uma análise exploratória**
     - 2.1. Calcular correlação entre variáveis
-    - 2.2. Calcular percentis
+    - 2.2. Calcular percentis e aplicar medidas de tendência central
     - 2.3. Agrupar e visualizar dados de acordo com variáveis categóricas
-    - 2.4. Aplicar medidas de tendência central
-    - 2.5. Aplicar medidas de dispersão
-    - 2.6. Ver distribuição
-   
+    - 2.4. Aplicar medidas de dispersão
+      
 - **3. Aplicar técnica de análise**
     - 3.1. Validar hipótese
     - 3.2. Aplicar segmentação
@@ -513,7 +511,7 @@ FROM `amazon_sales.amazon_principal`;
 2.1.2- Resultados:
 ![tabela-5](https://github.com/user-attachments/assets/03ea0345-3734-4caf-a4d2-0de9882ddf77)
 
-### 2.2. Calcular percentis
+### 2.2. Calcular percentis e aplicar medidas de tendência central
 
 <details>
   <summary>2.2.1- Dividir base de dados por quintil, com variáveis com SQL:</summary>
@@ -568,10 +566,7 @@ SELECT * FROM quintis
 
 
 
-### 2.4. Aplicar medidas de tendência central
-
-
-### 2.5. Aplicar medidas de dispersão
+### 2.4. Aplicar medidas de dispersão
 
 
 ![Dispersão 1](https://github.com/user-attachments/assets/599615fc-ca71-4d3d-a3ea-bb37f48f9e70)
@@ -590,16 +585,6 @@ SELECT * FROM quintis
 ![Dispersão 4](https://github.com/user-attachments/assets/a074c6b9-8991-46ae-bde5-aaaa6228cbe7)
 
 
-
-
-
-
-
-
-
-
-
-### 2.6. Ver distribuição
 
 
    

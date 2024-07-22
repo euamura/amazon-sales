@@ -50,7 +50,7 @@ Isso levantou algumas hipóteses sobre a base de produtos:
   
 ## Linguagens
 - SQL
-- 
+
 ## Escopo do projeto
 
 - **1. Processar e preparar a base de dados**

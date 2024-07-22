@@ -560,6 +560,13 @@ SELECT * FROM quintis
 ![rating e rating_count categoria_produto](https://github.com/user-attachments/assets/71abd93d-68ec-4c08-856e-c8ac54c0f121)
 
 
+![Nulos](https://github.com/user-attachments/assets/592613cb-a062-4f6e-8779-da5d0bc07b80)
+
+
+![Nulos  2](https://github.com/user-attachments/assets/5e81d959-e239-4378-a619-8f6d82a7dcd8)
+
+
+
 
 ### 2.4. Aplicar medidas de tendência central
 

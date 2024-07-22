@@ -794,11 +794,21 @@ FROM
 ![Dashboard](https://github.com/user-attachments/assets/6225d1c6-64d7-4d74-9bc0-8e96e0980757)
 
 
+
+**Tabela de Resumo das Categorias**
+
+
+![Resumo Categorias](https://github.com/user-attachments/assets/f84941be-259e-4d7a-a2ff-70b182c21744)
+
+
+
 ## 5. Conclusões e próximos passos
 
 **Conclusão: Rumo ao Sucesso no Dropshipping**
 
 Ao implementar um modelo de análise de produtos robusto e estratégico, a Amazon e seus fornecedores de dropshipping podem tomar decisões mais assertivas, otimizar seus investimentos e alcançar um sucesso duradouro no mercado dinâmico do comércio eletrônico. A Matriz BCG, como ferramenta complementar, auxilia na identificação de oportunidades e tomada de decisões estratégicas para cada produto da carteira.
+
+Podemos verificar na tabela com resumo das informações das categorias, que o desempenho em satisfação dos clientes deixa a categoria Casa e Cozinha em 1º lugar seguida, de Computadores e acessórios em 2º lugar, Eletrônicos apesar de ser a categoria com mais produtos no seu portfólio e 8,6 milhões de avaliações, esta em 3º lugar, e em 4º lugar Produtos de escritório que apesar de ter a melhor média e possuir 100% dos seus produtos com classificação entre 4 e 5, possui um número de apenas 31 produtos, representando apenas 2,29% do total de produtos.
 
 **Eletrônicos em Foco**
 

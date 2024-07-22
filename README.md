@@ -567,6 +567,31 @@ SELECT * FROM quintis
 ### 2.5. Aplicar medidas de dispersão
 
 
+![Dispersão 1](https://github.com/user-attachments/assets/599615fc-ca71-4d3d-a3ea-bb37f48f9e70)
+
+
+
+![Dispersão 2](https://github.com/user-attachments/assets/a9bd52fd-87ef-4b12-b6ce-ec45eac44149)
+
+
+
+
+![Dispersão 3](https://github.com/user-attachments/assets/6234b4d2-a0e7-4ab6-be06-1fc3c6eacfbc)
+
+
+
+![Dispersão 4](https://github.com/user-attachments/assets/a074c6b9-8991-46ae-bde5-aaaa6228cbe7)
+
+
+
+
+
+
+
+
+
+
+
 ### 2.6. Ver distribuição
 
 

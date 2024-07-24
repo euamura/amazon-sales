@@ -776,7 +776,8 @@ FROM
 
 ## 4. Resumir informações e apresentar resultados em um dashboard
 
-![Dashboard](https://github.com/user-attachments/assets/6225d1c6-64d7-4d74-9bc0-8e96e0980757)
+
+![Dashboard_2](https://github.com/user-attachments/assets/e22a5cd4-f512-4cde-b3b0-72d459638a9a)
 
 
 

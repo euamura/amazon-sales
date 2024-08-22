@@ -1,8 +1,11 @@
 # Otimizando a Análise de Produtos para Estratégias de Dropshipping Eficazes na Amazon
 
 ## Link de nteresse
-
+### Apresentações
 https://app.powerbi.com/view?r=eyJrIjoiNzUwYzgxNjktYzQ4Ni00ZDRlLTkwODctMDkyNjRhNzZkOTJkIiwidCI6IjRhNWRiNDI3LTllNTgtNDQ5MC04ZDY4LWYxOWJlYjRiNzlmMCJ9
+
+Vídeo de apresentação:
+
 https://youtu.be/ehf84D7a0ko
 
 ## Equipe

@@ -3,6 +3,7 @@
 ## Link de nteresse
 
 https://app.powerbi.com/view?r=eyJrIjoiNzUwYzgxNjktYzQ4Ni00ZDRlLTkwODctMDkyNjRhNzZkOTJkIiwidCI6IjRhNWRiNDI3LTllNTgtNDQ5MC04ZDY4LWYxOWJlYjRiNzlmMCJ9
+https://youtu.be/ehf84D7a0ko
 
 ## Equipe
 - Amanda Mendonça
